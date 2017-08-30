@@ -4,13 +4,14 @@
   "version": "1.0.0",
   "main": "lib/index.js",
   "scripts": {
-    "test": "ava ./test"
+    "test": "ava ./test --verbose"
   },
   "repository": "git@github.com:mmajko/metalsmith-another-source.git",
   "author": "Marián Hlaváč <hlavac95@gmail.com>",
   "license": "GPL-3.0",
   "dependencies": {
     "ava": "^0.22.0",
-    "metalsmith": "^2.3.0"
+    "metalsmith": "^2.3.0",
+    "rimraf": "^2.6.1"
   }
 }
