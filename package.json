@@ -1,0 +1,16 @@
+{
+  "name": "metalsmith-another-source",
+  "description": "A Metalsmith plugin that allows you to specify more than one sources for your input files.",
+  "version": "1.0.0",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "ava ./test"
+  },
+  "repository": "git@github.com:mmajko/metalsmith-another-source.git",
+  "author": "Marián Hlaváč <hlavac95@gmail.com>",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "ava": "^0.22.0",
+    "metalsmith": "^2.3.0"
+  }
+}
