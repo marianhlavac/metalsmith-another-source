@@ -24,7 +24,7 @@ test.cb('metalsmith bounce-off test', t => {
   })
 })
 
-test.cb('adding one another source', t => {
+test.cb('adding another source', t => {
   Metalsmith(__dirname)
   .source('./fixtures/source1')
   .destination('../tmp')
@@ -34,7 +34,28 @@ test.cb('adding one another source', t => {
   .use((files, metalsmith, done) => {
     
     const actual = Object.keys(files).sort()
-    const expected = [ 'file00', 'file01', 'file02' ]
+    const expected = [ 'file00', 'file01', 'file02', 'picture01.jpg' ]
+    t.deepEqual(actual, expected)
+    t.end()
+    
+    done()
+  })
+  .build(err => { 
+    console.error(err)
+  })
+})
+
+test.cb('adding another source and applying a pattern filter', t => {
+  Metalsmith(__dirname)
+  .source('./fixtures/source1')
+  .destination('../tmp')
+  
+  .use(anotherSource('fixtures/source2', /.*\.jpg/))
+  
+  .use((files, metalsmith, done) => {
+    
+    const actual = Object.keys(files).sort()
+    const expected = [ 'file00', 'file01', 'picture01.jpg' ]
     t.deepEqual(actual, expected)
     t.end()
     
