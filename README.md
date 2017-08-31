@@ -16,6 +16,8 @@ Use before other middlewares to work with loaded files, so make it the first `.u
 
 ```js
 
+  const anotherSource = require('metalsmith-another-source')
+
   ... 
   
   Metalsmith(__dirname)
@@ -27,3 +29,15 @@ Use before other middlewares to work with loaded files, so make it the first `.u
   ...
   
 ```
+
+## API
+
+### anotherSource(directory [, pattern])
+
+Returns a plugin.
+
+**directory** *(String)*  
+A path to the directory to be added as another source. Is relative to Metalsmith directory set with `Metalsmith(...)`.
+
+**pattern** *(Regexp)*  
+Regexp matching files to be included. When not present, all files in directory will be included.
